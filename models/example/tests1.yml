@@ -1,0 +1,18 @@
+version : 2
+
+models :
+  - name : customers
+    columns :
+     - name : customername
+       test : 
+        - unique 
+      
+
+  - name : orders 
+    columns :
+     - name : price 
+       test : 
+          - unique
+          - relationship: 
+              to : ref('stg_orders')
+              field : custkey
